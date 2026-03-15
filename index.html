@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaNishma — Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: #1E293B;
+      background: #F8FAFC;
+      padding: 0 20px 80px;
+    }
+    .wrapper {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+    header {
+      padding: 48px 0 32px;
+      border-bottom: 2px solid #E2E8F0;
+      margin-bottom: 40px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .brand-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0F172A;
+    }
+    .brand-sub {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #0F172A;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .meta {
+      font-size: 14px;
+      color: #94A3B8;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1E293B;
+      margin: 36px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    p { margin-bottom: 14px; color: #334155; }
+    ul { margin: 0 0 14px 24px; }
+    li { margin-bottom: 6px; color: #334155; }
+    .callout {
+      background: #EFF6FF;
+      border-left: 4px solid #2563EB;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 20px 0;
+      color: #1E3A8A;
+      font-weight: 500;
+    }
+    .contact {
+      background: #F1F5F9;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 40px;
+    }
+    a { color: #2563EB; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="brand">
+        <div class="brand-name">MaNishma</div>
+        <div class="brand-sub">Message Automation &amp; Scheduling</div>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: March 2026</p>
+    </header>
+
+    <div class="callout">
+      MaNishma does not collect, transmit, or store any personal data on external servers. All your data stays on your device.
+    </div>
+
+    <h2>1. What MaNishma Does</h2>
+    <p>MaNishma is a Chrome extension that allows you to automate the sending of WhatsApp Web messages based on triggers you define — including manual button clicks, scheduled times, keyword detection in incoming messages, and civil defense (Pikud HaOref) alerts.</p>
+
+    <h2>2. Data We Collect</h2>
+    <p>MaNishma does <strong>not</strong> collect any personal data. Specifically:</p>
+    <ul>
+      <li>No data is sent to any external server operated by MaNishma or its developers.</li>
+      <li>No analytics, telemetry, or crash reporting is performed.</li>
+      <li>No account creation or login is required.</li>
+    </ul>
+
+    <h2>3. Data Stored Locally on Your Device</h2>
+    <p>The following information is stored locally using Chrome's built-in <code>chrome.storage.sync</code> and <code>chrome.storage.local</code> APIs, which are synced across your own Chrome profile only:</p>
+    <ul>
+      <li><strong>Trigger configurations</strong> — names, recipient contact names or phone numbers, message text, schedules, and keyword rules you create.</li>
+      <li><strong>Execution log</strong> — a local record of when each trigger was last fired.</li>
+      <li><strong>Pending delayed sends</strong> — temporary data needed to execute a send after a user-configured delay.</li>
+    </ul>
+    <p>This data is never shared with any third party and remains fully under your control. You can delete it at any time by removing the extension or clearing its storage via Chrome settings.</p>
+
+    <h2>4. Access to WhatsApp Web</h2>
+    <p>MaNishma injects a content script into <code>web.whatsapp.com</code> to automate message sending and optionally detect incoming keyword matches. This script:</p>
+    <ul>
+      <li>Types and sends messages on your behalf using triggers you configured.</li>
+      <li>For keyword triggers only: reads the visible text of recently received messages in the currently open WhatsApp chat to check for keyword matches. This text is never transmitted outside your browser.</li>
+    </ul>
+    <p>MaNishma does not read your contact list, chat history, or media files beyond what is minimally necessary to execute your configured triggers.</p>
+
+    <h2>5. Pikud HaOref (Red Alert) Integration</h2>
+    <p>If you use the Red Alert trigger type, MaNishma periodically queries the publicly available Pikud HaOref API (<code>https://www.oref.org.il</code>) to check for active civil defense alerts in Israel. This is a read-only, unauthenticated request to a public government endpoint. No personal data is sent in these requests.</p>
+
+    <h2>6. Permissions Used</h2>
+    <ul>
+      <li><strong>storage</strong> — to save your trigger configurations locally.</li>
+      <li><strong>alarms</strong> — to schedule triggers at specific times and manage send delays.</li>
+      <li><strong>tabs</strong> — to locate the open WhatsApp Web tab when a trigger fires.</li>
+      <li><strong>scripting</strong> — to inject the content script that types and sends messages on WhatsApp Web.</li>
+      <li><strong>notifications</strong> — to optionally notify you when a trigger fires (future use).</li>
+    </ul>
+
+    <h2>7. Third-Party Services</h2>
+    <p>MaNishma uses Google Fonts (Plus Jakarta Sans) for typography in the extension UI. This request is made by your browser to Google's CDN and is subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+    <p>No other third-party services are used.</p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>MaNishma is not directed at children under 13 and does not knowingly collect any information from children.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>If this privacy policy changes, the updated version will be published at this URL with a revised "Last updated" date. Continued use of MaNishma after a policy change constitutes acceptance of the new policy.</p>
+
+    <div class="contact">
+      <h2 style="border:none; margin-top:0;">10. Contact</h2>
+      <p style="margin-bottom:0;">If you have questions about this privacy policy or MaNishma's data practices, please open an issue on the project's GitHub repository or contact the developer directly.</p>
+    </div>
+  </div>
+</body>
+</html>
